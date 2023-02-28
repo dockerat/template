@@ -1,11 +1,11 @@
-FROM ccr.ccs.tencentyun.com/storezhang/alpine:3.15.6
+FROM ccr.ccs.tencentyun.com/storezhang/alpine:3.16.2
 
 
-LABEL author="storezhang<华寅>"
-LABEL email="storezhang@gmail.com"
-LABEL qq="160290688"
-LABEL wechat="storezhang"
-LABEL description="动态域名解析，支持阿里云、百度云、腾讯云、DNSPod等"
+LABEL author="storezhang<华寅>" \
+email="storezhang@gmail.com" \
+qq="160290688" \
+wechat="storezhang" \
+description="动态域名解析，支持阿里云、百度云、腾讯云、DNSPod等"
 
 
 # 复制文件
