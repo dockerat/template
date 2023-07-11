@@ -1,3 +1,11 @@
+kind: secret
+name: password_ccr
+get:
+  path: secrets
+  name: password_ccr
+---
+
+
 kind: pipeline
 type: docker
 name: 发布
@@ -7,12 +15,21 @@ clone:
   disable: true
 
 
+environment:
+  NAME: nginx
+  DOCKER_REGISTRY: ccr.ccs.tencentyun.com
+  DOCKER_REPOSITORY: storezhang/nginx
+  TAG: 0.0.$${DRONE_BUILD_NUMBER}
+
+
 steps:
   - name: 代码
     image: ccr.ccs.tencentyun.com/dronestock/git
+    pull: always
 
   - name: 发布
     image: ccr.ccs.tencentyun.com/dronestock/docker
+    pull: always
     privileged: true
     volumes:
       - name: docker
@@ -23,7 +40,8 @@ steps:
       PASSWORD_CCR:
         from_secret: password_tencentyun_ccr
     settings:
-      repository: storezhang/todo
+      repository: $${DOCKER_REPOSITORY}
+      tag: $${TAG}
       registries:
         - username: storezhang
           password: $${PASSWORD_DOCKER}
