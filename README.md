@@ -1,8 +1,5 @@
 # 项目
 
-[![编译状态](https://github.ruijc.com:20443/api/badges/pangum/pangu/status.svg)](https://github.ruijc.com:20443/pangum/pangu)
-[![Golang质量](https://goreportcard.com/badge/github.com/pangum/pangu)](https://goreportcard.com/report/github.com/pangum/pangu)
-![版本](https://img.shields.io/github/go-mod/go-version/pangum/pangu)
 ![仓库大小](https://img.shields.io/github/repo-size/pangum/pangu)
 ![Docker镜像版本](https://img.shields.io/docker/v/storezhang/ddns)
 ![Docker镜像大小](https://img.shields.io/docker/image-size/storezhang/ddns)
